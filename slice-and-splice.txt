@@ -1,0 +1,20 @@
+function frankenSplice(arr1, arr2, n) {
+  // Because arrays in JS are reference values, 
+  // so when you try to copy it using the = it will only copy the reference 
+  // to the original array and not the value of the array. 
+  // To create a real copy of an array, you need to copy over the value 
+  // of the array under a new value variable. 
+  // That way this new array does not reference to the old array address in memory.
+
+
+  //--> This is by reference and points to SAME ADDRESS 
+  //var temp = arr2;
+  var temp = [...arr2];
+  console.log(temp);
+  console.log(arr1);
+  temp.splice(n,0,...arr1);
+  console.log(temp);
+  return temp;
+}
+
+frankenSplice([1, 2, 3], [4, 5, 6], 1);

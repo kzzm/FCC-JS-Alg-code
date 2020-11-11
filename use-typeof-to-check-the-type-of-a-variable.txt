@@ -1,0 +1,10 @@
+let seven = 7;
+let three = "3";
+console.log(three+ seven );   // Lead with a string and does string concatenation
+console.log(seven + three );  // Lead with a number and does addition concatenation
+// Only change code below this line
+// 6 primitive immutable data types: Boolean, Null, Undefined
+// Number, string, Symbol [Symbol from ES6]
+// One mutable is Object (Arrays are a type of Object)
+console.log(typeof seven);
+console.log(typeof three);

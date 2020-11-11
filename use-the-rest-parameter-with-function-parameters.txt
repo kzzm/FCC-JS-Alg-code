@@ -1,0 +1,43 @@
+/***************************************************************************************************************
+
+ES6: Use the Rest Parameter with Function Parameters
+In order to help us create more flexible functions, ES6 introduces the rest parameter for function parameters. With the rest parameter, you can create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function.
+
+Check out this code:
+
+function howMany(...args) {
+  return "You have passed " + args.length + " arguments.";
+}
+console.log(howMany(0, 1, 2)); // You have passed 3 arguments.
+console.log(howMany("string", null, [1, 2, 3], { })); // You have passed 4 arguments.
+The rest parameter eliminates the need to check the args array and allows us to apply map(), filter() and reduce() on the parameters array.
+
+Modify the function sum using the rest parameter in such a way that the function sum is able to take any number of arguments and return their sum.
+
+=========================================
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+
+The reduce() method executes a reducer function (that you provide) on each element of the array, 
+resulting in a single output value.
+
+const array1 = [1, 2, 3, 4];
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+// 1 + 2 + 3 + 4
+console.log(array1.reduce(reducer));
+// expected output: 10
+
+// 5 + 1 + 2 + 3 + 4
+console.log(array1.reduce(reducer, 5));
+// expected output: 15
+
+***************************************************************************************************************/
+
+
+
+
+//const sum = (x, y, z) => {
+//    const args = [x, y, z];
+  const sum = (...args) => {
+  return args.reduce((a, b) => a + b, 0);
+}

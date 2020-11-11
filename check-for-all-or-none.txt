@@ -1,0 +1,6 @@
+let favWord = "favorite";
+// These two methods are equivalent
+// {0,1} and ?
+//let favRegex = /favou{0,1}rite/; // Change this line
+let favRegex = /favou?rite/; // Change this line
+let result = favRegex.test(favWord);

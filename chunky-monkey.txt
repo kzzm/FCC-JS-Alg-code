@@ -1,0 +1,22 @@
+function chunkArrayInGroups(arr, size) {
+  let fullLength = arr.length;
+  var buildFull = [];
+  var build;
+  // Remember to change increment and increase step size
+  // i = i+ size!!!
+  for (let i=0; i<fullLength; i=i+size){
+      build = [];
+      // Add filter to make sure that empty cells aren't added
+      // Don't shift when empty. Check with != 0
+      for (let j=0; j < size && (arr.length !=0); j++){
+        build.push(arr.shift());
+      }
+      console.log(build);
+      buildFull.push(build);
+      
+  }
+  console.log("Full --> ",buildFull);
+  return buildFull;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);

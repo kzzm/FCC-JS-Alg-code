@@ -1,0 +1,29 @@
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+
+// Only change code below this line
+
+function half(stats) {
+  const {max, min} = stats;
+  // I originally had this
+  // const {max:a, min:b} = stats; 
+  // return (a+b)/2;
+  // You don't need to create another variable. 
+  // You pull out the parameter and have it named to itself.
+  //(stats) => {const {max:a, min:b} = stats;}
+return (max+min)/2;
+}
+
+// **** FCC Answer  **********************
+// Study https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring
+// const half = ({ max, min }) => (max + min) / 2.0;
+// Seeing the about in lamda form makes the pieces clearer
+// const <functionName> = (<passedParameters) ==> <returnedValue>;
+// The const is required for correctly instantiating 
+// Only change code above this line

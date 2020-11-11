@@ -1,0 +1,26 @@
+let username = "JackOfAllTrades";
+// Almost there with this solution. 
+// However it doesn't like Z97 - First letter and two numbers
+let userCheck = /^[A-Za-z][A-Za-z]+\d*$/; // Change this line
+
+// This one lets too much through "J" and "A1"
+//let userCheck = /^[A-Za-z]+\d*$/; // Change this line
+let result = userCheck.test(username);
+
+// What I needed to know is that ( ) is a valid construct
+// This concept is "capture group"
+// I also forgot to use the "ignore" feature "i"
+
+
+//Interesting that this does NOT work
+let userCheck = /^[a-z]([a-z]+\d*$ | [0-9][0-9]+)/i; // Change this line
+// Turns out the end anchor needs to be moved outside the group
+// Since the entire capture group is the end anchor
+// The extra whitespace to make it READABLE also caused it to FAIL, 
+// since WHITESPACE is NOT ignored
+
+//Both of these work
+let userCheck = /^[a-z]([a-z]+\d*|[0-9][0-9])$/i;  <-- The use case Z97 only has two numbers
+let userCheck = /^[a-z]([a-z]+\d*|[0-9][0-9]+)$/i; <-- Similiar to checking for Z97, but would also catch Z971, Z9712,etc
+
+let userCheck = /^[a-z]([0-9][0-9]+|[a-z]+\d*)$/i;

@@ -1,0 +1,10 @@
+function sumAll(arr) {
+arr.sort((a,b)=> (a-b));
+let retVal=0;
+console.log(arr);
+
+for (let i=arr[0]; i<= arr[1];i++) retVal += i
+  return retVal;
+}
+
+sumAll([1, 4]);

@@ -1,0 +1,21 @@
+function titleCase(str) {
+  let tempView1 = str.split(" ");
+  var tempView2 = [];
+  for (let i=0; i < tempView1.length; i++){
+    tempView1[i] = tempView1[i].toLowerCase();
+    //console.log(tempView1[i]);
+    // This was a roundabout solution
+    // I'm curious about using Regular Expressions and parameter substitution
+    // Like tempView ( ^(\w) (\w+) $1.toUpperCase $2)  <-- I have no idea if this pseudocode is valid!
+    //
+    // This is FCC answer using Regular Expressions
+    // I do NOT understand it
+    // str.toLowerCase().replace(/(^|\s)\S/g, L => L.toUpperCase());
+    tempView2[i] = tempView1[i].substring(0,1).toUpperCase() + tempView1[i].substring(1,tempView1[i].length);
+    console.log(tempView2[i]);
+  }
+
+  return tempView2.join(" ");
+}
+
+titleCase("I'm a little tea pot");

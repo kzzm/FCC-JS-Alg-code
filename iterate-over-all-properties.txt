@@ -1,0 +1,24 @@
+function Dog(name) {
+  this.name = name;   //Own Property 
+                      // Covered by "this"
+}
+
+Dog.prototype.numLegs = 4;    // prototype is a higher order child
+                              // Properties then belong to prototype
+                              // Instance then inherits them
+
+let beagle = new Dog("Snoopy");
+
+let ownProps = [];
+let prototypeProps = [];
+
+for (let property in beagle) {
+  if(beagle.hasOwnProperty(property)) {
+    ownProps.push(property);
+  } else {
+    prototypeProps.push(property);
+  }
+}
+
+
+// Only change code below this line

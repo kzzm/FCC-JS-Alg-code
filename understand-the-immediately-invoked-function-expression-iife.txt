@@ -1,0 +1,21 @@
+// Original WAY!!!
+/* 
+function makeNest() {
+  console.log("A cozy nest is ready");
+}
+*/
+
+// Commented out original function
+// Replaced by Immediately invoked function being called
+//makeNest();
+
+
+// New way
+// IIFE = Immediately Invoked Function Expression
+// (<--Opening  Closing -->)() <-- End with parameters
+// Syntax (function () { STUFF } )  ();
+(function () {
+  console.log("A cozy nest is ready");
+}) ();
+
+

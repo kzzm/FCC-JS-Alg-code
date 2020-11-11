@@ -1,0 +1,17 @@
+function Bird() {
+   // Changed so that it's private
+  let weight = 15;
+ 
+ // With the "this", it makes it PUBLIC
+ // this.weight = 15;
+ //In JavaScript, a function always has access to the context 
+ // in which it was created. 
+ // This is called closure.
+ // Getters --> Closure
+ this.getWeight =function (){
+   return weight;
+ }
+
+
+
+}

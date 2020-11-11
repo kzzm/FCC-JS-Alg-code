@@ -1,0 +1,18 @@
+let sampleWord = "astronaut";
+//let pwRegex = /^\D(?=\w{5,})(?=\d\d)/; // Change this line
+let pwRegex = /^\D(?=\w{5,})(?=\D*\d*\D*\d{2,})/; // Change this line
+let result = pwRegex.test(sampleWord);
+
+// =================================
+let sampleWord = "astronaut";
+//let pwRegex = /^\D(?=\w{5,})(?=\d\d)/; // Change this line
+// Doesn't match banan1,abc123,astr1on11aut
+// Why isn't detecting 2 sequential digits???
+let pwRegex = /^\D(?=\w{5,})(?=(\d\d))/; // Change this line
+let result = pwRegex.test(sampleWord);
+
+
+// Hint (?=\D*\d) --> This did better (?=\D*\d{2,})
+
+// Need to ignore the single number in the string astr1on11aut
+// Had to tune it to the most difficult case --> /^\D(?=\w{5,})(?=\D*\d*\D*\d{2,})/

@@ -1,0 +1,12 @@
+let repeatNum = "42 42 42";
+//let reRegex = /(\d)\s)\3/; // Change this line
+//let reRegex = /(\d)(\s)\1\2\1/; // Change this line
+//let reRegex = /\d\s+/;
+// This is close to the final answer
+// It was required that the beginning and end of the expression 
+// be tagged. However it's NOT clear why \d+ is required over \d
+//let reRegex = /^(\d)(\s)\1\2\1$/;
+let reRegex = /^(\d+)(\s)\1\2\1$/;
+//let reRegex = /(\d+)(\s)(\d+)(\s)(\d+)/;
+//let reRegex = /(\d+\s)\1\1/;
+let result = reRegex.test(repeatNum);

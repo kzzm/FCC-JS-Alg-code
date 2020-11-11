@@ -1,0 +1,22 @@
+function bouncer(arr) {
+  let temp=[];
+for (let i=0; i< arr.length; i++)
+  switch (arr[i]){
+    case false:
+    case null:
+    case 0:
+    case "":
+    case undefined:
+    break;
+    default:
+    // Note - NaN is still considered a number despite not BEING A NUMBER
+    // Adding the second part allows it to trap for NaN 
+    // and not exclude strings
+    if ((isNaN(arr[i])) && (typeof arr[i] === 'number')) break; 
+    else temp.push(arr[i]);
+  }
+  console.log(temp);
+  return temp;
+}
+
+bouncer([7, "ate", "", false, 9]);

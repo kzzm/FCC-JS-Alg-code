@@ -1,0 +1,12 @@
+function confirmEnding(str, target) {
+  let pieceA, pieceB;
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
+  pieceA = str.substring(str.length - target.length,str.length);
+  // Key for substring is that there is start and then ONE past the endpoint
+  // The array is 0 index. Using the str.length puts it just beyond the end.
+  console.log(pieceA);
+  console.log("Target --> ",target);
+  return pieceA == target;
+}
+
+confirmEnding("Bastian", "n");

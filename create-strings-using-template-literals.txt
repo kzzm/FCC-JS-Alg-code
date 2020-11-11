@@ -1,0 +1,23 @@
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["id-blacklist", "no-dup-keys"]
+};
+function makeList(arr) {
+  "use strict";
+
+  // Only change code below this line
+  const resultDisplayArray = [];
+  for (const ff of result.failure) {
+    // The key is to use BACKTICK and NOT SINGLE or DOUBLE QUOTE
+    const piece = `<li class=\"text-warning\">${ff}</li>`;
+    //console.log(piece);
+    resultDisplayArray.push(piece);
+  }
+  console.log(resultDisplayArray);
+  // Only change code above this line
+
+  return resultDisplayArray;
+}
+
+const resultDisplayArray = makeList(result.failure);

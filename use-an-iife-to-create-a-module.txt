@@ -1,0 +1,44 @@
+/***************************************
+ * Orignal Functions
+ * 
+ * let isCuteMixin = function(obj) {
+  obj.isCute = function() {
+    return true;
+  };
+};
+let singMixin = function(obj) {
+  obj.sing = function() {
+    console.log("Singing to an awesome tune");
+  };
+};
+*******************************************/
+// Contained functions are separated by commas
+// since they are separate entities defined by keys
+// Key: Value pair  <--
+/* Syntax
+ let functionName = 
+       (function () {
+           return {
+             KeyFunction1 : function(obj) { obj.Method1 = function(){STUFF}},
+             KeyFunction2 : function(obj) { obj.Method1 = function(){STUFF}}
+             }
+        }
+      ) ()  <-- end with "()" to pass parameters
+
+*************************************************/
+
+let funModule = (function (){
+return {
+ isCuteMixin : function(obj) {
+  obj.isCute = function() {
+    return true;
+  };
+},
+ singMixin : function(obj) {
+  obj.sing = function() {
+    console.log("Singing to an awesome tune");
+  };
+}
+
+}
+}) ()

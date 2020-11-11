@@ -1,0 +1,13 @@
+function reverseString(str) {
+  let flip=[];
+  var ar = str.split('');
+  // Split --> Push --> Join
+  //console.log(ar);
+  //console.log(ar.length)
+  for (let i=ar.length; i>0; i--) {
+  flip.push(ar[i-1]);
+  }
+  return   flip.join('');
+}
+
+reverseString("hello");
